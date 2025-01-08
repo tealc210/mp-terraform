@@ -1,24 +1,10 @@
-terraform {
-    backend "s3" {
-        bucket = "dag-tf-training"
-        key    = "training.tfstate"
-        region = "us-east-1"
-    }
-
-    required_providers {
-        aws = {
-            source  = "hashicorp/aws"
-            version = "~> 5.0"
-        }
-    }
-    
-    required_version = "~> 1.9"
-}
-
 provider "aws" {
   region = "us-east-1"
 }
 
+provider "null" {
+ 
+}
 
 module "sg_training" {
     source      = "../modules/sg"
@@ -38,5 +24,6 @@ module "ebs_training" {
 }
 
 module "keypair_training" {
-    source = "../modules/keypair"
+    source       = "../modules/keypair"
+    keyfile_name = "admin-key"
 }
