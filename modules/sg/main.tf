@@ -20,7 +20,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http" {
   from_port         = 80
   ip_protocol       = "tcp"
   to_port           = 80
-  cidr_ipv4         = cidrsubnet(data.aws_vpc.aws_training_vpc.cidr_block, 4, 1)
+  cidr_ipv4         = data.aws_vpc.aws_training_vpc.cidr_block #cidrsubnet(data.aws_vpc.aws_training_vpc.cidr_block, 4, 1)
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_tls" {
@@ -28,7 +28,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tls" {
   from_port         = 443
   ip_protocol       = "tcp"
   to_port           = 443
-  cidr_ipv4         = cidrsubnet(data.aws_vpc.aws_training_vpc.cidr_block, 4, 1)
+  cidr_ipv4         = data.aws_vpc.aws_training_vpc.cidr_block
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http_8080" {
@@ -36,11 +36,11 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_8080" {
   from_port         = 8080
   ip_protocol       = "tcp"
   to_port           = 8080
-  cidr_ipv4         = cidrsubnet(data.aws_vpc.aws_training_vpc.cidr_block, 4, 1)
+  cidr_ipv4         = data.aws_vpc.aws_training_vpc.cidr_block
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all" {
   security_group_id = aws_security_group.sg_web.id
   ip_protocol = "tcp"
-  cidr_ipv4         = cidrsubnet(data.aws_vpc.aws_training_vpc.cidr_block, 4, 1)
+  cidr_ipv4         = data.aws_vpc.aws_training_vpc.cidr_block
 }
