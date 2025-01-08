@@ -1,5 +1,5 @@
 variable "size" {
-    type = integer
+    type = number
     default = 5
     description = ""
 }
