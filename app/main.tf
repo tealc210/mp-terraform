@@ -1,7 +1,7 @@
 terraform {
     backend "s3" {
         region = us-east-1
-        bucket = "tf-training"
+        bucket = "dag-tf-training"
         key    = "training.tfstate"
     }
 
