@@ -1,5 +1,5 @@
-variable "vpc_id" {
+variable "vpc_name" {
     type        = string
     default     = ""
-    description = ""
+    description = "Name of the VPC"
 }
