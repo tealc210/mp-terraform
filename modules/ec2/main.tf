@@ -17,6 +17,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "training_host" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
+  key_name      = var.key_name
 
   tags          = var.host_tags
 }

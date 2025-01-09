@@ -1,13 +1,18 @@
 variable "ebs_size" {
     type = number
     default = 5
-    description = ""
+    description = "Size of the Elastic Block Storage in GB"
 }
 
 variable "host_tags" {
     type = map(string)
     default = {}
     description = "Tags applied to EC2 instance"
+}
+
+variable "key_name" {
+  type = string
+  description = "Key name of the Key Pair to use for the instance"
 }
 
 variable "instance_type" {
