@@ -41,6 +41,6 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_8080" {
 
 resource "aws_vpc_security_group_egress_rule" "allow_all" {
   security_group_id = aws_security_group.sg_web.id
-  ip_protocol = "tcp"
+  ip_protocol = -1
   cidr_ipv4         = data.aws_vpc.aws_training_vpc.cidr_block
 }
