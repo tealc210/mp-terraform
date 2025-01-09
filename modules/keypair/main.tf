@@ -1,6 +1,6 @@
 resource "null_resource" "ssh_key" {
   provisioner "local-exec" {
-    command = "ssh-keygen -t rsa -b 4096 -f ${var.keyfile_path}/${var.keyfile_name} -N '${var.key_passphrase}'"
+    command = "[ -f ${var.keyfile_path}/${var.keyfile_name} ] || ssh-keygen -t rsa -b 4096 -f ${var.keyfile_path}/${var.keyfile_name} -N '${var.key_passphrase}'"
   }
 }
 
