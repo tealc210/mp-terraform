@@ -16,7 +16,7 @@ module "training_project_ec2" {
     instance_type = "t2.micro"
     key_name      = "ec2-defaultkey"
 
-    depends_on = [ module.keypair_training, module.ebs_training ]
+    depends_on = [ module.training_project_keypair, module.training_project_ebs ]
 }
 
 module "training_project_eip" {
