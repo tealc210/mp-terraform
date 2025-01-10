@@ -18,6 +18,9 @@ resource "aws_instance" "training_host" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   key_name      = var.key_name
+  root_block_device {
+    delete_on_termination = true
+  }
 
   tags          = var.host_tags
 }
