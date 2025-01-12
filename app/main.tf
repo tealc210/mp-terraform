@@ -2,10 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# provider "null" {
- 
-# }
-
 module "training_project_sg" {
     source      = "../modules/sg"
     vpc_name    = "training"
