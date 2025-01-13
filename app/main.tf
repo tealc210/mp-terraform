@@ -3,28 +3,31 @@ provider "aws" {
 }
 
 module "training_project_sg" {
-    source      = "../modules/sg"
-    vpc_name    = "training"
+  source   = "../modules/sg"
+  vpc_name = var.vpc_name
 }
 
 module "training_project_ec2" {
-    source        = "../modules/ec2"
-    instance_type = "t2.micro"
-    key_name      = "ec2-defaultkey"
+  source        = "../modules/ec2"
+  instance_type = var.instance_type
+  key_name      = var.key_name
 
-    depends_on = [ module.training_project_keypair, module.training_project_ebs ]
+  depends_on = [module.training_project_keypair]
 }
 
 module "training_project_eip" {
-    source      = "../modules/eip"
-    instance_id = module.training_project_ec2.instance_id
+  source      = "../modules/eip"
+  instance_id = module.training_project_ec2.instance_id
 }
 
 module "training_project_ebs" {
-    source = "../modules/ebs"
+  source           = "../modules/ebs"
+  instance_to_join = module.training_project_ec2.instance_id
+  ebs_az           = module.training_project_ec2.instance_az
+  ebs_size         = 6
 }
 
 module "training_project_keypair" {
-    source       = "../modules/keypair"
-    #keyfile_name = "admin-key"
+  source       = "../modules/keypair"
+  keyfile_name = var.key_name
 }
