@@ -2,15 +2,13 @@
 
 ---
 
-
-
 Go to the "app" folder and change the values in the host.tfvars file if needed.
 
 **Set your AWS profile :**
 `$> export AWS_PROFILE=<name_of_your_aws_profile>`
 
 **Create your terraform backend on S3 (example through command line) :**
-\$> aws s3api create-bucket --bucket <NAME_OF_YOUR_BUCKET>
+`$> aws s3api create-bucket --bucket <name_of_your_bucket>`
 Replace the Bucket name in the file providers.tf
 
 **Initialize the terraform workdir :**
@@ -22,8 +20,6 @@ Replace the Bucket name in the file providers.tf
 ## Requirements
 
 ---
-
-
 
 #### What is needed...
 
