@@ -22,7 +22,6 @@ Replace the Bucket name in the file providers.tf
 ![](assets/20250123_221426_plan.png)
 ![](assets/20250123_221426_planned.png)
 
-
 `$> terraform apply --var-file="host.tfvars"`
 
 ![](assets/20250123_220644_apply.png)
@@ -45,7 +44,7 @@ To do so, it requires the 3 following variables :
 
 * ebs_az              => waiting for the availability zone where the EBS will be deployed
 * ebs_size            => waiting for the size of the volume in GB
-* instance_to_join    => waiting for the instance ID which will receive the volume
+* instance_to_join    => waiting for the instance ID which will receive the volume **(mandatory)**
 
 **Module "ec2"**
 This module creates an AWS Elastic Compute Cloud instance.
