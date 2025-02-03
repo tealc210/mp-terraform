@@ -14,21 +14,21 @@ Replace the Bucket name in the file providers.tf
 **Initialize the terraform workdir :**
 `$> terraform init`
 
-![](images/init.png)
+![](images/20250123_220613_init.png)
 
 **Deploy with the following command :**
 `$> terraform plan --var-file="host.tfvars"`
 
-![](images/plan.png)
-![](images/planned.png)
+![](images/20250123_221426_plan.png)
+![](images/20250123_221426_planned.png)
 
 `$> terraform apply --var-file="host.tfvars"`
 
-![](images/apply.png)
+![](images/20250123_220644_apply.png)
 
 You will then be able to start to operate Jenkins
 
-![](images/jenkins.png)
+![](images/20250123_220937_jenkins.png)
 
 ## Requirements
 
