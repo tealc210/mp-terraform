@@ -11,7 +11,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["099720109477"]
 }
 
 resource "aws_instance" "training_host" {
@@ -39,7 +39,7 @@ resource "aws_instance" "training_host" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("/tmp/${var.key_name}")
+      private_key = file("${var.key_path}")
       host        = self.public_ip
     }
   }

@@ -53,6 +53,7 @@ To do so, it requires the 4 following variables :
 * ebs_size        => waiting for the size of the root EBS volume in GB
 * host_tags       => waiting for the tags to be applied to the instance
 * key_name        => waiting for the name of the SSH key to be used to connect to EC2 **(mandatory)**
+* key_path        => waiting for the path to the SSH key to be used to connect to EC2 **(mandatory)**
 * instance_type   => waiting for the AWS instance type
 
 **Module "eip"**
