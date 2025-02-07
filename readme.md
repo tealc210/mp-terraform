@@ -1,15 +1,31 @@
 ## How to install your instance
-
 ---
 
-Go to the "app" folder and change the values in the host.tfvars file if needed.
-
 **Set your AWS profile :**
-`$> export AWS_PROFILE=<name_of_your_aws_profile>`
+Go to your home directory, and open the credentials file in the .aws folder to enter your AWS keys :
+
+```
+[YOUR_PROFILE_NAME]
+aws_access_key_id=ASIAI44QH8DHBEXAMPLE
+aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+```
+
+In the same folder, open the config file and fill it with your standard configuration, like this :
+
+```
+[YOUR_PROFILE_NAME]
+region = us-east-1
+```
+When all of this is done set the AWS_PROFILE environment variable :
+LINUX / MAC OS `$> export AWS_PROFILE=<name_of_your_aws_profile>`
+WINDOWS OS `C:\ setx AWS_PROFILE user1`
 
 **Create your terraform backend on S3 (example through command line) :**
 `$> aws s3api create-bucket --bucket <name_of_your_bucket>`
 Replace the Bucket name in the file providers.tf
+
+**Prepare the deployment :**
+Go to the "app" folder and change the values in the host.tfvars file if needed.
 
 **Initialize the terraform workdir :**
 `$> terraform init`
