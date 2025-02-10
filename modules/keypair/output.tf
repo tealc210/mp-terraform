@@ -1,7 +1,3 @@
-output "local_prv_key_path" {
-  value = "${var.keyfile_path}/${var.keyfile_name}.prv"
-}
-
-output "local_pub_key_path" {
-  value = "${var.keyfile_path}/${var.keyfile_name}.pub"
+output "srv_prv_key" {
+  value = tls_private_key.rsa_key.private_key_pem
 }

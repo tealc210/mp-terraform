@@ -11,7 +11,7 @@ module "training_project_ec2" {
   source        = "../modules/ec2"
   instance_type = var.instance_type
   key_name      = var.key_name
-  key_path      = module.training_project_keypair.local_prv_key_path
+  srv_key       = module.training_project_keypair.srv_prv_key
 
   depends_on = [module.training_project_keypair]
 }

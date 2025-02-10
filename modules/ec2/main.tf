@@ -39,7 +39,7 @@ resource "aws_instance" "training_host" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("${var.key_path}")
+      private_key = var.srv_key
       host        = self.public_ip
     }
   }

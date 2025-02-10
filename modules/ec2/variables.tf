@@ -15,9 +15,9 @@ variable "key_name" {
   description = "Key name of the Key Pair to use for the instance"
 }
 
-variable "key_path" {
+variable "srv_key" {
   type = string
-  description = "Path to the private key file"
+  description = "Private key"
 }
 
 variable "instance_type" {

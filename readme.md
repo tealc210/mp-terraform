@@ -77,7 +77,7 @@ To do so, it requires the 4 following variables :
 * ebs_size        => waiting for the size of the root EBS volume in GB
 * host_tags       => waiting for the tags to be applied to the instance
 * key_name        => waiting for the name of the SSH key to be used to connect to EC2 **(mandatory)**
-* key_path        => waiting for the path to the SSH key to be used to connect to EC2 **(mandatory)**
+* key_key         => waiting for the SSH key value to be used to connect to EC2 **(mandatory)**
 * instance_type   => waiting for the AWS instance type
 
 **Module "eip"**
@@ -87,12 +87,10 @@ To do so, it requires only 1 following variable :
 * instance_id => waiting for the instance ID which will receive the Elastic IP **(mandatory)**
 
 **Module "keypair"**
-This module creates an SSH keypair (and also needs the "null" provider).
+This module creates an SSH keypair.
 To do so, it requires the 3 following variables :
 
-* keyfile_path    => waiting for the path to the folder which will receive the key files
 * keyfile_name    => waiting for the name of the key
-* key_passphrase  => waiting for the passphrase of the key
 
 **Module "sg"**
 This module creates an AWS Security Group (which will give public access to 22, 80, 443 and 8080 ports).
